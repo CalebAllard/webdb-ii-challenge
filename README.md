@@ -22,7 +22,7 @@ Follow these steps for completing your project.
 
 - Using `knex migrations`, design and write a schema for the `cars` table using the specifications below.
 - Configure `knex` to connect to a `/data/car-dealer.db3` database using the `sqlite3` npm module.
-- Write endpoints to support `CREATE` and `READ` operations on the `cars` resource.
+- Write endpoints to support `CREATE` and `READ` operations on the `cars` resource.knex
 - Use a rest client like _Insomnia_ or _Postman_ to test your API.
 
 ## Specifications
