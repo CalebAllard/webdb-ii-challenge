@@ -45,5 +45,26 @@ router.post('/', (req,res) => {
     })
 
 });
-
+router.put('/:id', (req,res) => {
+    const payload = req.body;
+    db('cars').update(payload).where({id:req.params.id})
+    .then(ret => {
+        console.log(ret);
+        res.status(201).json(ret);
+        
+    })
+    .catch(err =>{
+        console.log(err);
+        res.status(500).json({err:'Problem updating cars'});
+    })
+});
+router.delete('/:id', (req,res) => {
+    db('cars').delete().where({id:req.params.id}).then(ret => {
+        console.log(ret);
+        res.status(200).json(ret);
+    }).catch(err => {
+        console.log(ret);
+        res.status(500).json({err:"problem deleteing car"});
+    })
+});
 module.exports = router;
